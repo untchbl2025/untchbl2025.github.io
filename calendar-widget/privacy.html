@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calendar Widget — Datenschutzerklärung / Privacy Policy</title>
+<title>Hush Kalender / Hush Calendar — Datenschutzerklärung / Privacy Policy</title>
 <!-- Bewusst ohne Web-Fonts und externe Dateien: die Seite überträgt nichts an Dritte. -->
 <style>
   :root { --bg: #F4F4F7; --card: #FFFFFF; --ink: #0D0D12; --ink2: #5C5F6B; --line: #E1E2E8; --accent: #2F6FEB; }
@@ -38,16 +38,17 @@
 <body>
 <main>
 
-  <nav><a href="./">Calendar Widget</a><a href="#de">Deutsch</a><a href="#en">English</a></nav>
+  <nav><a href="./">Hush Calendar</a><a href="#de">Deutsch</a><a href="#en">English</a></nav>
 
-  <h1>Calendar Widget</h1>
-  <div class="meta">Datenschutzerklärung / Privacy Policy · NAKID Industry · Stand / last updated: 06.10.2026</div>
+  <h1>Hush Kalender · Hush Calendar</h1>
+  <div class="meta">Datenschutzerklärung / Privacy Policy · NAKID Industry · Stand / last updated: 09.11.2026</div>
 
   <h2 id="de">Deutsch</h2>
 
-  <p class="lede">Calendar Widget zeigt deine Termine auf dem Startbildschirm an. Deine
-    Kalenderdaten bleiben auf deinem Gerät: Es gibt keine Server des Entwicklers, kein
-    Konto bei uns, keine Analyse, keine Werbung und keine Weitergabe an Dritte.</p>
+  <p class="lede">Hush Kalender (auf dem Handy „Kalender“) zeigt deine Termine in der App und auf dem
+    Startbildschirm. Deine Kalenderdaten bleiben auf deinem Gerät: kein Konto bei uns, keine Analyse, kein
+    Tracking, keine Werbung. Nur optionale Funktionen (Wetter, Losfahr-Hinweis, Kalender-Abos) fragen die unten
+    genannten Dienste, und eine Meldung an uns geht nur, wenn du sie selbst abschickst.</p>
 
   <h3>Verantwortlich</h3>
   <p>NAKID Industry · <a href="mailto:nkd.industry@gmail.com">nkd.industry@gmail.com</a></p>
@@ -58,10 +59,16 @@
     Kalendername und -farbe sowie Termine (Titel, Zeit, Ort, Beschreibung, Teilnahmestatus,
     Videokonferenz-Link) für den angezeigten Zeitraum. Die Daten werden ausschließlich auf
     dem Gerät verarbeitet, um Widget und Termindetails anzuzeigen, und verlassen das Gerät
-    nicht. Die App schreibt nichts in deine Kalender.</p>
+    nicht (Ausnahme: der optionale Losfahr-Hinweis, siehe unten).</p>
+  <p>Termine schreibt die App nur, wenn du selbst einen anlegst, änderst, verschiebst oder löschst und
+    das mit „Speichern“ bzw. „Löschen“ bestätigst (Berechtigung <code>WRITE_CALENDAR</code>). Sie
+    schreibt in einen Kalender auf dem Gerät; ist er mit einem Konto verbunden, gleicht Android ihn wie
+    gewohnt mit diesem Konto ab. Eigene Symbole, Countdown-Markierungen und Vorlagen speichert die App
+    nur lokal.</p>
 
-  <h3>Google Kalender direkt (optional)</h3>
-  <p>Wenn du in der App ausdrücklich „Google Kalender direkt“ wählst und dich mit deinem
+  <h3>Google Kalender direkt (optional, nicht in jeder Version)</h3>
+  <p>Diese Quelle bietet die App erst nach Abschluss der Prüfung durch Google an. Wenn du in der App
+    ausdrücklich „Google Kalender direkt“ wählst und dich mit deinem
     Google-Konto anmeldest, ruft die App deine Kalender und Termine direkt bei der
     Google Calendar API ab. Dabei gilt:</p>
   <ul>
@@ -81,7 +88,7 @@
       Termindetailansicht anzuzeigen. Sie werden nicht an Dritte übertragen, nicht verkauft,
       nicht für Werbung genutzt und von keinem Menschen gelesen.</li>
   </ul>
-  <p>Die Nutzung und Übertragung von Informationen, die Calendar Widget von Google-APIs
+  <p>Die Nutzung und Übertragung von Informationen, die Hush Calendar von Google-APIs
     erhält, erfolgt gemäß der
     <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
     einschließlich der Anforderungen zur eingeschränkten Nutzung („Limited Use“).</p>
@@ -98,17 +105,70 @@
     Server des Entwicklers. Den Beginn des Testzeitraums kann Android mit den Einstellungen
     sichern (siehe unten), damit er nach einer Neuinstallation erhalten bleibt.</p>
 
+  <h3>Kalender-Abos (optional)</h3>
+  <p>Abonnierst du einen Kalender per Link (webcal oder .ics, z. B. Ferien oder Spielpläne), ruft die App diesen
+    Link selbst direkt beim Anbieter des Kalenders ab – beim Abonnieren, etwa alle 12 Stunden und auf Wunsch. Dabei
+    sieht der Anbieter die übliche Anfrage (IP-Adresse, Zeitpunkt); an uns geht nichts. Die Termine landen in einem
+    Kalender auf deinem Gerät (nur lesen). Der Link kann einen geheimen Schlüssel enthalten; er liegt nur in den
+    Daten der App, nicht im Kalender und in keinem Protokoll.</p>
+
   <h3>Einstellungen und Datensicherung</h3>
   <p>Deine Einstellungen (Stil, Ansicht, ausgewählte Kalender, Farben) liegen nur lokal auf
     dem Gerät. Hast du die Android-Datensicherung in deinem Google-Konto aktiviert, kann
     Android diese Einstellungen dort mitsichern; das steuerst du in den Systemeinstellungen.
     Termine sind davon ausgenommen.</p>
 
+  <h3>Optionale Funktionen mit Standort, Mikrofon oder Kamera</h3>
+  <p>Diese Funktionen sind anfangs aus. Die jeweilige Berechtigung fragt die App erst, wenn du sie einschaltest
+    bzw. zum ersten Mal benutzt; ohne Zustimmung bleibt die Funktion aus.</p>
+  <ul>
+    <li><b>Wetter in „Heute“</b> (ungefährer Standort, <code>ACCESS_COARSE_LOCATION</code>): Die auf
+      etwa 1 km gerundeten Koordinaten gehen verschlüsselt an das Norwegische Meteorologische Institut
+      (<a href="https://api.met.no/doc/TermsOfService">MET Norway</a>, <code>api.met.no</code>), um die Vorhersage
+      abzurufen – nur bei geöffneter App, höchstens etwa stündlich. MET speichert dabei nach eigener Angabe die
+      IP-Adresse in seinen Protokollen. Das Ergebnis liegt nur im Zwischenspeicher der App (von der Datensicherung
+      ausgenommen); Ausschalten löscht ihn. Wetterdaten: MET Norway, CC BY 4.0.</li>
+    <li><b>Losfahr-Hinweis</b> (ungefährer Standort): Den Ort eines Termins wandelt der Geocoding-Dienst des
+      Systems in Koordinaten um (auf den meisten Handys ein Dienst von Google); dabei wird der Ortstext
+      übertragen, nicht dein Standort. Die Fahrzeit schätzt die App auf dem Gerät aus der Entfernung.
+      Orte, Koordinaten und der letzte Startort liegen nur im Zwischenspeicher der App, sind von der
+      Datensicherung ausgenommen und werden beim Ausschalten gelöscht. „Route“ öffnet deine Karten-App.</li>
+    <li><b>Live-Anzeige</b> (Benachrichtigungen): eine stille Benachrichtigung vor und während eines
+      Termins. Termine, die du im Widget als privat markierst, zeigt der Sperrbildschirm nur als „Privat“.</li>
+    <li><b>Spracheingabe</b> (Mikrofon, <code>RECORD_AUDIO</code>): nur, während du nach Tippen auf das
+      Mikrofon sprichst (Assistent, neuer Termin). Gesprochenes wandelt die Spracherkennung von Android um, nach
+      Möglichkeit auf dem Gerät; es gelten die Bestimmungen des Anbieters dieser Spracherkennung. Die App speichert
+      und überträgt keine Aufnahmen.</li>
+    <li><b>Termin aus Foto, Bild oder geteiltem Text</b> (Kamera-App, Bildauswahl, „Teilen“): Die App hat
+      keine Kamera- und keine Speicher-Berechtigung – Fotos nimmt die Kamera-App des Systems auf, Bilder wählst du
+      in der Fotoauswahl des Systems. Text im Bild erkennt ML Kit über die Google-Play-Dienste auf dem Gerät; Bild
+      und Text gehen dabei nicht an den Entwickler. Ein aufgenommenes Foto löscht die App nach dem Lesen.</li>
+    <li><b>AI auf dem Gerät</b> (Schalter „AI auf dem Gerät“, nur auf unterstützten Geräten): Gemini Nano läuft
+      über Android AICore auf dem Gerät. Der Satz bzw. für den Assistenten Titel, Zeit und Ort deiner Termine der
+      nächsten 7 Tage verlassen das Gerät dafür nicht.</li>
+  </ul>
+
+  <h3>Feedback und Absturzbericht</h3>
+  <p>Nur wenn du unter Mehr › „Feedback senden“ etwas abschickst oder einem Absturzbericht ausdrücklich zustimmst
+    (Mehr › Hilfe › Letzter Absturz › „Bericht senden“ bzw. „Senden“ in der Frage nach einem Absturz), schickt die App
+    etwas an den Entwickler. Inhalt: die Art (Fehler oder Wunsch) und der Text, den du selbst eingibst. Ist der Schalter
+    „App- und Android-Version anhängen“ an (Standard: an, vor dem Senden abschaltbar), gehen zusätzlich die
+    Versionsnummer der App und die Android-Version mit. Bei einem Absturz ist der Text ein technisches Absturzprotokoll: nur die Art des
+    Fehlers und die betroffenen Stellen im Programmcode, keine Fehlermeldungen; vor dem Senden zeigt „Was gesendet
+    wird“ genau diesen Text. Es gehen keine Kennungen mit (keine Geräte-, Konto-, Installations- oder Werbe-ID), kein
+    Gerätemodell, keine Einstellungen, keine Termine, Kalendernamen, Orte oder Kontakte. Du brauchst kein Konto; bitte
+    gib keine persönlichen Daten in den Text ein.</p>
+  <p>Die Meldung geht verschlüsselt an ein Google Apps Script des Entwicklers (Google LLC verarbeitet sie dabei; es
+    begrenzt die Zahl der Meldungen für alle zusammen, nicht je Gerät)
+    und wird als Eintrag in einem privaten GitHub-Repository des Entwicklers (GitHub, Inc.) gespeichert, das nur
+    der Entwickler lesen kann. Sie dient nur dazu, Fehler zu beheben und die App zu verbessern. Ohne Netz geht
+    nichts raus. Löschen auf Wunsch: Mail an die Adresse unten (nenne dazu den Text der Meldung).</p>
+
   <h3>Was die App nicht tut</h3>
   <ul>
-    <li>Keine Analyse- oder Tracking-Werkzeuge, keine Werbung, keine Absturzberichte an uns.</li>
-    <li>Keine Weitergabe von Daten an Dritte, kein Verkauf von Daten.</li>
-    <li>Kein Standort, keine Kontakte, kein Mikrofon, keine Kamera.</li>
+    <li>Keine Analyse- oder Tracking-Werkzeuge, keine Werbung, keine Absturzberichte ohne dein Zutun.</li>
+    <li>Keine Weitergabe von Daten an Dritte außer den oben genannten Diensten, kein Verkauf von Daten.</li>
+    <li>Kein genauer Standort, kein Standort im Hintergrund, keine Kontakte.</li>
   </ul>
   <p class="note">Tippst du auf einen Termin, kann die App deine Kalender-App oder einen
     Videokonferenz-Link öffnen; dort gelten die Datenschutzbestimmungen der jeweiligen App.
@@ -117,10 +177,12 @@
 
   <h3>Löschen und Widerruf</h3>
   <ul>
+    <li>Wetter, Losfahr-Hinweis oder Kalender-Abo ausschalten bzw. entfernen: Die zugehörigen Daten der App
+      werden gelöscht.</li>
     <li>Quelle in der App auf „Kalender auf dem Handy“ umstellen oder die App deinstallieren:
       Beim Deinstallieren löscht Android alle Daten der App, einschließlich Zwischenspeicher.</li>
-    <li>Kalender-Berechtigung entziehen: Android-Einstellungen › Apps › Calendar Widget ›
-      Berechtigungen.</li>
+    <li>Kalender-, Standort-, Mikrofon- oder Benachrichtigungs-Berechtigung entziehen:
+      Android-Einstellungen › Apps › Kalender (Hush) › Berechtigungen.</li>
     <li>Google-Zugriff widerrufen:
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
   </ul>
@@ -139,9 +201,10 @@
 
   <h2 id="en">English</h2>
 
-  <p class="lede">Calendar Widget shows your events on your home screen. Your calendar data
-    stays on your device: the developer runs no servers, there is no account with us, no
-    analytics, no ads and no sharing with third parties.</p>
+  <p class="lede">Hush Calendar (“Calendar” on your phone) shows your events in the app and on your home
+    screen. Your calendar data stays on your device: no account with us, no analytics, no tracking, no ads. Only
+    optional features (weather, time-to-leave hint, calendar subscriptions) contact the services named below, and a
+    report reaches us only when you send it yourself.</p>
 
   <h3>Responsible</h3>
   <p>NAKID Industry · <a href="mailto:nkd.industry@gmail.com">nkd.industry@gmail.com</a></p>
@@ -151,10 +214,15 @@
     <code>READ_CALENDAR</code>, read only). It reads calendar names and colours and events
     (title, time, location, description, your response status, video meeting link) for the
     period shown. This data is processed only on the device to display the widget and event
-    details, and never leaves the device. The app does not write to your calendars.</p>
+    details, and never leaves the device (exception: the optional leave reminder, see below).</p>
+  <p>The app only writes events when you create, change, move or delete one yourself and confirm with
+    “Save” or “Delete” (permission <code>WRITE_CALENDAR</code>). It writes to a calendar on the device;
+    if that calendar belongs to an account, Android syncs it with that account as usual. Your own icons,
+    countdown marks and templates are stored locally only.</p>
 
-  <h3>Google Calendar directly (optional)</h3>
-  <p>If you explicitly choose “Google Calendar directly” in the app and sign in with your Google
+  <h3>Google Calendar directly (optional, not in every version)</h3>
+  <p>The app offers this source only once Google’s verification is complete. If you explicitly choose
+    “Google Calendar directly” in the app and sign in with your Google
     account, the app fetches your calendars and events directly from the Google Calendar API:</p>
   <ul>
     <li>Only read access is requested (scope
@@ -172,7 +240,7 @@
       detail view. It is not transferred to third parties, not sold, not used for advertising
       and not read by any human.</li>
   </ul>
-  <p>Calendar Widget’s use and transfer to any other app of information received from Google
+  <p>Hush Calendar’s use and transfer to any other app of information received from Google
     APIs will adhere to the
     <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
     including the Limited Use requirements.</p>
@@ -189,16 +257,68 @@
     developer. Android may back up the trial start together with the settings (see below) so it
     survives a reinstall.</p>
 
+  <h3>Calendar subscriptions (optional)</h3>
+  <p>If you subscribe to a calendar by link (webcal or .ics, e.g. holidays or fixtures), the app fetches that link
+    itself directly from the calendar’s provider – when you subscribe, about every 12 hours and on request. The
+    provider sees the usual request (IP address, time); nothing is sent to us. The events are stored in a
+    read-only calendar on your device. The link may contain a secret key; it is kept only in the app’s data, not in
+    the calendar and not in any log.</p>
+
   <h3>Settings and backup</h3>
   <p>Your settings (style, view, selected calendars, colours) are stored locally on the
     device. If you have enabled Android backup to your Google account, Android may include
     these settings there; you control this in the system settings. Events are excluded.</p>
 
+  <h3>Optional features using location, microphone or camera</h3>
+  <p>These features are off by default. The app asks for the permission only when you turn a feature on or
+    first use it; without consent it stays off.</p>
+  <ul>
+    <li><b>Weather in “Today”</b> (approximate location, <code>ACCESS_COARSE_LOCATION</code>): coordinates
+      rounded to about 1 km are sent encrypted to the Norwegian Meteorological Institute
+      (<a href="https://api.met.no/doc/TermsOfService">MET Norway</a>, <code>api.met.no</code>) to fetch the
+      forecast – only while the app is open, at most about once an hour. According to MET, it stores the IP address
+      in its logs. The result is kept only in the app’s cache (excluded from backup); turning weather off deletes
+      it. Weather data: MET Norway, CC BY 4.0.</li>
+    <li><b>Leave reminder</b> (approximate location): the system’s geocoding service (on most phones a
+      Google service) turns an event’s location text into coordinates; the location text is sent, not your
+      position. The app estimates the travel time on the device from the distance. Places, coordinates and
+      the last starting point stay in the app’s cache, are excluded from backup and are deleted when you turn
+      the feature off. “Route” opens your maps app.</li>
+    <li><b>Live display</b> (notifications): a silent notification before and during an event. Events you
+      mark as private for the widget appear on the lock screen only as “Private”.</li>
+    <li><b>Voice input</b> (microphone, <code>RECORD_AUDIO</code>): only while you speak after tapping the
+      microphone (assistant, new event). Android’s speech recognition converts speech to text, on the device where
+      possible; the terms of that speech service apply. The app neither stores nor uploads recordings.</li>
+    <li><b>Event from a photo, image or shared text</b> (camera app, photo picker, “Share”): the app has no
+      camera and no storage permission – photos are taken with the system camera app, images are picked with the
+      system photo picker. ML Kit via Google Play services recognizes text in the image on the device; neither image
+      nor text is sent to the developer. A photo you take is deleted after reading.</li>
+    <li><b>On-device AI</b> (“On-device AI” switch, supported devices only): Gemini Nano runs on the device via
+      Android AICore. The sentence, or for the assistant the title, time and place of your events in the next 7
+      days, does not leave the device for this.</li>
+  </ul>
+
+  <h3>Feedback and crash report</h3>
+  <p>Only when you send something under More › “Send feedback”, or explicitly agree to a crash report (More › Help ›
+    Last crash › “Send report”, or “Send” when the app asks after a crash), does the app send anything to the
+    developer. Contents: the kind (problem or idea) and the text you type yourself. If “Attach app and Android
+    version” is on (on by default, you can turn it off before sending), the app’s version number and the Android version
+    are added. For a crash the text
+    is a technical crash log: only the kind of error and the affected places in the program code, no error messages;
+    “What is sent” shows exactly this text before sending. No identifiers are sent (no device, account, installation
+    or advertising ID), no device model, no settings, no events, calendar names, places or contacts. No account is
+    needed; please don’t enter personal data in the text.</p>
+  <p>The report goes encrypted to a Google Apps Script of the developer (processed by Google LLC; it limits the
+    number of reports for everyone together, not per device) and is stored as
+    an entry in a private GitHub repository of the developer (GitHub, Inc.) that only the developer can read. It is
+    used only to fix problems and improve the app. Without a connection nothing is sent. Deletion on request: email
+    the address below (quote the text of the report).</p>
+
   <h3>What the app does not do</h3>
   <ul>
-    <li>No analytics or tracking tools, no ads, no crash reports sent to us.</li>
-    <li>No sharing of data with third parties, no selling of data.</li>
-    <li>No location, contacts, microphone or camera.</li>
+    <li>No analytics or tracking tools, no ads, no crash reports without your action.</li>
+    <li>No sharing of data with third parties other than the services named above, no selling of data.</li>
+    <li>No precise location, no background location, no contacts.</li>
   </ul>
   <p class="note">When you tap an event, the app may open your calendar app or a video meeting
     link; that app’s privacy policy applies there. Google Play may provide the developer with
@@ -206,9 +326,12 @@
 
   <h3>Deletion and revoking access</h3>
   <ul>
+    <li>Turn off or remove weather, the time-to-leave hint or a calendar subscription: the related app data is
+      deleted.</li>
     <li>Switch the source in the app back to “Calendars on this phone”, or uninstall the app:
       Android then deletes all app data, including the cache.</li>
-    <li>Revoke the calendar permission: Android Settings › Apps › Calendar Widget › Permissions.</li>
+    <li>Revoke the calendar, location, microphone or notification permission: Android Settings › Apps ›
+      Calendar (Hush) › Permissions.</li>
     <li>Revoke Google access:
       <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
   </ul>
